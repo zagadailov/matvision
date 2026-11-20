@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Train MatVision's movement classifier on labeled rolling clips.">
+<title>MatVision | Movement Training</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="shell top">
+<a class="brand" href="./" aria-label="MatVision home"><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8V4h4m10 0h4v4m0 8v4h-4M7 20H3v-4M6 15l4-6 4 6 4-6"/></svg></span>Mat<span>Vision</span></a>
+<nav aria-label="Workspace"><a class="tab" href="./">Live analysis</a><a class="tab active" href="training.html" aria-current="page">Training</a></nav>
+<span class="privacy"><i></i> Local processing</span>
+</div>
+</header>
+<main class="shell">
+<div class="heading"><div><h1>Movement Training</h1><p>Label rolling clips to add movement examples to your model.</p></div></div>
+<div class="workspace training-workspace">
+<section class="panel">
+<div class="panel-head"><h2>Training clip</h2></div>
+<div class="training-body">
+<label for="training-file">Video file</label>
+<input type="file" id="training-file" accept="video/*,.mp4,.mov,.webm">
+<p>Use footage licensed for training. The video is processed in this browser.</p>
+<video id="training-video" controls playsinline preload="auto" hidden></video>
+<form id="example-form" class="example-form">
+<div class="training-fields">
+<label>Movement <select id="label" required></select></label>
+<label>Clip start in seconds <input id="clip-start" type="number" min="0" step="0.01" value="0" required></label>
+</div>
+<div class="actions">
+<button id="mark-start" type="button" class="secondary" disabled>Use playback time</button>
+<button id="learn" class="primary" disabled>Add training example</button>
+</div>
+<p>Each example uses two seconds of video. Choose a clear exchange with both athletes visible.</p>
+</form>
+<p id="training-status" class="training-status" role="status"></p>
+</div>
+</section>
+<div class="training-sidebar">
+<section class="panel">
+<div class="panel-head"><h2>YouTube source</h2></div>
+<div class="training-body">
+<form id="source-form" class="source-form">
+<label for="source-url">Rolling video URL</label>
+<input type="url" id="source-url" placeholder="https://www.youtube.com/watch?v=…" required>
+<button id="check-source" class="secondary">Check training permission</button>
+</form>
+<p id="source-status" role="status"></p>
+<a id="source-link" class="training-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" hidden>Open on YouTube</a>
+</div>
+</section>
+<section class="panel">
+<div class="panel-head"><h2>Movement model</h2></div>
+<div class="training-body">
+<p id="model-state" role="status"></p>
+<label class="research-toggle"><input type="checkbox" id="research-model"> Use the experimental research model</label>
+<p id="research-status" role="status"></p>
+<h3 class="section-label">YOUR EXAMPLES</h3>
+<ul class="label-counts" id="label-counts"></ul>
+<details class="model-details"><summary>Training footage and validation</summary><p id="baseline-validation"></p><p id="baseline-training"></p><ul id="baseline-sources"></ul><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p></details>
+<a class="training-link" href="./">Open live analysis</a>
+</div>
+</section>
+</div>
+</div>
+</main>
+<script type="module" src="training.js"></script>
+</body>
+</html>

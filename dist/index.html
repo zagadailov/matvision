@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Live movement tracking and retrospective analysis for jiu-jitsu rolling."><title>MatVision | Rolling Analysis</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="symbols">
+<symbol id="logo" viewBox="0 0 24 24"><path d="M3 8V4h4m10 0h4v4m0 8v4h-4M7 20H3v-4M6 15l4-6 4 6 4-6"/></symbol>
+<symbol id="video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-5 4 3 5-6"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></symbol>
+<symbol id="activity" viewBox="0 0 24 24"><path d="M2 12h5l3-7 4 14 3-7h5"/></symbol>
+<symbol id="people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/></symbol>
+</svg>
+<header><div class="shell top"><a class="brand" href="./" aria-label="MatVision home"><span class="mark"><svg><use href="#logo"/></svg></span>Mat<span>Vision</span></a><nav aria-label="Workspace"><button class="tab active" data-view="live" aria-current="page"><svg><use href="#video"/></svg> Live analysis</button><button class="tab" data-view="review"><svg><use href="#chart"/></svg> Round review</button><a class="tab" href="training.html">Training</a></nav><span class="privacy"><i></i> Local processing</span></div></header>
+<main class="shell">
+<section id="live">
+<div class="heading"><div><div class="eyebrow"><span></span> ROLLING WORKSPACE</div><h1>Live Analysis</h1><p>Frame both athletes, start analysis, and review the round afterward.</p></div><div class="actions"><button id="demo" class="secondary"><svg><use href="#play"/></svg> Try demo</button><button id="preview" class="primary" aria-controls="stage"><svg><use href="#video"/></svg> Preview camera</button><button id="start" class="primary" hidden><svg><use href="#play"/></svg> Start analysis</button></div></div>
+<div class="workspace" id="live-workspace">
+<section class="panel feed" aria-labelledby="feed-title">
+<div class="panel-head"><h2 id="feed-title"><svg><use href="#video"/></svg> Camera feed</h2><div class="feed-controls"><span id="feed-state" class="chip" role="status"><i></i> Standby</span><button id="wide-view" class="secondary compact" aria-pressed="false" aria-controls="stage">Wide view</button></div></div>
+<div id="camera-settings" class="camera-settings" hidden>
+<label id="lens-control" hidden>Camera <select id="lens"></select></label>
+<label id="zoom-control" hidden>Camera zoom <input type="range" id="zoom"><output id="zoom-level" for="zoom"></output></label>
+</div>
+<div id="stage" class="stage">
+<div id="poster" class="poster"></div>
+<video id="camera" aria-hidden="true" autoplay muted playsinline hidden></video>
+<canvas id="camera-frame" role="img" aria-label="Live landscape camera preview" hidden></canvas>
+<canvas id="overlay" aria-hidden="true"></canvas>
+<div class="viewfinder" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+<div class="stage-top"><span><i></i> <span id="source">CAMERA OFF</span></span><span id="crop-label" hidden>16:9 CROP</span><span id="timer">00:00</span></div>
+<div class="stage-bottom"><span id="framing-cue" role="status" hidden></span><span id="athlete-a" hidden><i class="blue"></i> Athlete A</span><span id="athlete-b" hidden><i class="mint"></i> Athlete B</span></div>
+</div>
+<div class="feed-footer"><span><svg><use href="#target"/></svg> <span id="tracking-status">Pose tracking inactive</span></span><label class="toggle"><input type="checkbox" id="show-overlay" checked><span class="switch"></span> Pose overlay</label></div>
+</section>
+<aside class="panel coach" aria-labelledby="coach-title">
+<div class="panel-head"><h2 id="coach-title"><svg><use href="#activity"/></svg> Live feedback</h2><span class="chip accent">REAL TIME</span></div>
+<div class="coach-body">
+<div class="cue"><span class="cue-icon"><svg><use href="#target"/></svg></span><div><h3 id="cue-title">Set up your camera</h3><p id="cue-body" aria-live="polite">Use a wide sideline view so both athletes stay in frame throughout the roll.</p></div></div>
+<h3 class="section-label">ROUND METRICS</h3>
+<div class="metric"><span><svg><use href="#people"/></svg> Athletes tracked</span><strong id="athletes">—</strong></div>
+<div class="metric"><span><svg><use href="#target"/></svg> Two-athlete coverage</span><strong id="coverage">—</strong></div>
+<div class="metric"><span><svg><use href="#activity"/></svg> <span id="movement-label">Relative movement</span></span><strong id="movement">—</strong></div>
+<div class="metric"><span><svg><use href="#clock"/></svg> Round duration</span><strong id="duration">00:00</strong></div>
+<div class="metric" id="classifier-metric" hidden><span><svg><use href="#target"/></svg> Estimated movement</span><strong id="recognized-movement">—</strong></div>
+<p class="coach-note" id="mode-note">Round metrics are saved on this device when you finish. Camera footage stays in the live view.</p>
+</div>
+</aside>
+</div>
+<section class="panel recent"><div class="panel-head"><h2><svg><use href="#clock"/></svg> Recent rounds</h2><button class="link" id="all-rounds">View all rounds</button></div><div id="recent-list" class="round-list"></div></section>
+</section>
+<section id="review" hidden>
+<div class="heading"><div><div class="eyebrow"><span></span> ROLLING WORKSPACE</div><h1>Round Review</h1><p>Inspect tracking coverage and movement across a saved round.</p></div><button class="secondary" id="back-live"><svg><use href="#video"/></svg> Live analysis</button></div>
+<div class="workspace">
+<section class="panel"><div class="panel-head"><h2><svg><use href="#chart"/></svg> Round timeline</h2><button id="export" class="secondary compact" disabled>Export data</button></div><div class="review-body" id="review-body"><p id="review-empty">Finish a live round or a demo to see the timeline here.</p><div id="report" hidden><h3 id="report-title"></h3><p id="report-meta"></p><div class="plot"><canvas id="chart" height="188" aria-label="Movement and tracking coverage across the round" role="img"></canvas></div><label class="range-label" for="scrubber">Timeline position <strong id="sample-time">00:00</strong></label><input id="scrubber" type="range" min="0" value="0"><div class="review-stats"><div><span>Athletes tracked</span><strong id="sample-count">—</strong></div><div><span id="sample-motion-label">Movement</span><strong id="sample-motion">—</strong></div><div id="sample-classifier" hidden><span>Estimated movement</span><strong id="sample-movement-label">—</strong></div></div><div class="cue review-cue"><span class="cue-icon"><svg><use href="#target"/></svg></span><div><h3 id="summary-title"></h3><p id="summary-text"></p></div></div></div></div></section>
+<section class="panel history"><div class="panel-head"><h2><svg><use href="#clock"/></svg> Saved rounds</h2></div><div id="history-list" class="round-list"></div></section>
+</div>
+</section>
+<div class="error" id="error" role="alert" hidden></div>
+</main>
+<script type="module" src="app.js"></script>
+</body></html>
