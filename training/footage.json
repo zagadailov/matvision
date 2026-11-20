@@ -1,0 +1,167 @@
+[
+  {
+    "id": "naga",
+    "title": "Jason Tepper at NAGA",
+    "credit": "Jason Tepper",
+    "url": "https://commons.wikimedia.org/wiki/File:Jason_Tepper_at_NAGA.webm",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Jason_Tepper_at_NAGA.webm",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "segments": [
+      [
+        8,
+        50,
+        "Standing movement"
+      ],
+      [
+        62,
+        86,
+        "Ground movement"
+      ],
+      [
+        88,
+        106,
+        "Ground movement"
+      ]
+    ]
+  },
+  {
+    "id": "grappling",
+    "title": "Grappling Session",
+    "credit": "Shuzaini Sabudin",
+    "url": "https://commons.wikimedia.org/wiki/File:Grappling_Session.webm",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/6/68/Grappling_Session.webm",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "segments": [
+      [
+        0,
+        12,
+        "Standing movement"
+      ],
+      [
+        16,
+        24,
+        "Ground movement"
+      ],
+      [
+        49,
+        53,
+        "Standing movement"
+      ],
+      [
+        64,
+        74,
+        "Standing movement"
+      ],
+      [
+        81,
+        87,
+        "Ground movement"
+      ]
+    ]
+  },
+  {
+    "id": "cup",
+    "title": "Commanding General’s Cup Individual Grappling Tournament",
+    "credit": "Cpl Juan Bustos, DVIDS",
+    "url": "https://www.dvidshub.net/video/679091/us-marines-compete-commanding-generals-cup-individual-grappling-tournament",
+    "download": "https://d34w7g4gy10iej.cloudfront.net/video/1905/DOD_106735101/DOD_106735101-1024x576-1769k.mp4",
+    "license": "U.S. public domain",
+    "licenseUrl": "https://www.dvidshub.net/about/copyright",
+    "segments": [
+      [
+        13,
+        16,
+        "Standing movement"
+      ],
+      [
+        19,
+        23,
+        "Ground movement"
+      ],
+      [
+        24,
+        26,
+        "Ground movement"
+      ],
+      [
+        29,
+        31,
+        "Standing movement"
+      ],
+      [
+        33,
+        37,
+        "Ground movement"
+      ]
+    ]
+  },
+  {
+    "id": "aviano",
+    "title": "Aviano Grappling Club",
+    "credit": "SSgt Elijah Dority, DVIDS",
+    "url": "https://www.dvidshub.net/video/904684/afn-tv-focus-aviano-grappling-club-skill-meets-mat",
+    "download": "https://d34w7g4gy10iej.cloudfront.net/video/2311/DOD_110004694/DOD_110004694.mp4",
+    "license": "U.S. public domain",
+    "licenseUrl": "https://www.dvidshub.net/about/copyright",
+    "segments": [
+      [
+        35,
+        40,
+        "Ground movement"
+      ],
+      [
+        41,
+        44,
+        "Ground movement"
+      ],
+      [
+        45,
+        49,
+        "Ground movement"
+      ],
+      [
+        53,
+        56,
+        "Ground movement"
+      ]
+    ]
+  },
+  {
+    "id": "gauntlet",
+    "title": "2024 Virginia Gauntlet Brazilian Jiu-Jitsu",
+    "credit": "Sgt Kedrick Schumacher, DVIDS",
+    "url": "https://www.dvidshub.net/video/920113/2024-virginia-gauntlet-brazilian-jiu-jitsu-b-roll-package",
+    "download": "https://d34w7g4gy10iej.cloudfront.net/video/2404/DOD_110249107/DOD_110249107.mp4",
+    "license": "U.S. public domain",
+    "licenseUrl": "https://www.dvidshub.net/about/copyright",
+    "segments": [
+      [
+        110,
+        117,
+        "Standing movement"
+      ],
+      [
+        118,
+        134,
+        "Standing movement"
+      ],
+      [
+        136,
+        150,
+        "Ground movement"
+      ],
+      [
+        152,
+        156,
+        "Ground movement"
+      ],
+      [
+        158,
+        166,
+        "Ground movement"
+      ]
+    ]
+  }
+]
